@@ -3,8 +3,7 @@ class String
     result = false
     aa = self.downcase.split('').sort
     bb = str.downcase.split('').sort
-    if self.scan(/^[^aeiouy]+$/) != [] || str.scan(/^[^aeiouy]+$/) != [] #<--only consonants
-# binding.pry
+    if self.scan(/^[^aeiouy]+$/) != [] || str.scan(/^[^aeiouy]+$/) != []
       result = 'not a word'
     else
 
@@ -12,12 +11,18 @@ class String
         result = 'palindrome'
       elsif aa == bb
         result = 'anagram'
-      elsif aa.each do |aletter|
-  # binding.pry
-        if bb.any? {|bletter| bletter == aletter }
-          result = 'partial anagram'
-        # elsif bb.all? {|bletter| bletter != aletter}
-        #   result = 'antigram'
+      elsif
+        # if str.length > self.length
+        #   str.slice(self)
+        # else
+        #   self.slice(str)
+        aa.each do |aletter|
+# binding.pry
+          if bb.any? {|bletter| bletter == aletter }
+            result = 'partial anagram'
+          elsif bb.all? {|bletter| bletter != aletter}
+          result = 'antigram'
+        end
         end
       end
       end

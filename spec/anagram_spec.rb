@@ -27,7 +27,7 @@ describe('String#anagram') do
     expect('zhk'.anagram('zhk')).to(eq('not a word'))
   end
 
-  # it('check if two inputs are antigrams') do
-  #   expect('hell'.anagram('yoyo')).to(eq('antigram'))
-  # end
+  it('check if two inputs are antigrams') do
+    expect('hell'.anagram('yoyo')).to(eq('antigram'))
+  end
 end
