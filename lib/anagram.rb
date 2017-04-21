@@ -1,14 +1,14 @@
 class String
   define_method(:anagram) do |str|
     result = 'antigrams'
-    input_1 = self.downcase.delete('^a-z').split('').sort
-    input_2 = str.downcase.delete('^a-z').split('').sort
+    input_1 = self.downcase.delete('^a-z').split('')
+    input_2 = str.downcase.delete('^a-z').split('')
     if self.scan(/^[^aeiouyAEIOUY]+$|^$|(.)\1{2,}/) != [] || str.scan(/^[^aeiouyAEIOUY]+$|^$|(.)\1{2,}/) != []
       result = 'not a word'
     else
-      if self.downcase.delete('^a-z').reverse == str.downcase.delete('^a-z')
+      if input_1.reverse == input_2
         result = 'palindromes'
-      elsif input_1 == input_2
+      elsif input_1.sort == input_2.sort
         result = 'anagrams'
       elsif
         input_1.each do |letter1|
