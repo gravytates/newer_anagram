@@ -34,4 +34,12 @@ describe('String#anagram') do
   it('check if two inputs are antigrams') do
     expect('hell'.anagram('yoyo')).to(eq('antigrams'))
   end
+
+  it('check if multiple words can evaluate as anagrams') do
+    expect('how fun'.anagram('wuf hon')).to(eq('anagrams'))
+  end
+  #
+  # it('check if multiple words can evaluate as anagrams') do
+  #   expect('how fun!'.anagram('wuf hon')).to(eq('anagrams'))
+  # end
 end
