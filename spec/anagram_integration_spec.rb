@@ -21,4 +21,13 @@ describe('the anagram path', {:type => :feature}) do
     click_button('Anagrize!')
     expect(page).to have_content('antigrams')
   end
+
+  it('processes user entries and evaluates two words as partial anagrams') do
+    visit('/')
+    fill_in('input_one', :with => 'Fair')
+    fill_in('input_two', :with => 'Freak')
+
+    click_button('Anagrize!')
+    expect(page).to have_content('partial anagrams')
+  end
 end
