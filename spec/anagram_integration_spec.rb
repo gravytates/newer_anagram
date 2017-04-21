@@ -56,5 +56,6 @@ describe('the anagram path', {:type => :feature}) do
 
     click_button('Anagrize!')
     expect(page).to have_content('anagrams')
+      expect(page).to have_content('14 matching letters')
   end
 end
