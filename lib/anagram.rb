@@ -1,19 +1,12 @@
 class String
   define_method(:anagram) do |str|
-    letters = self.downcase.split("")
-    argument_letters = str.downcase.split("")
+    # letters = self.downcase.split("")
+    # argument_letters = str.downcase.split("")
     result = false
     if self.downcase.delete("^a-z").reverse == str.downcase.delete("^a-z")
       result = 'palindrome'
-    elsif letters.each do |aletter|
-      argument_letters.each_with_index do |bletter, index|
-        if bletter.include?(aletter)
-          result = true
-        else
-          result = false  
-        end
-      end
-    end
+    elsif self.downcase.split('').sort == str.downcase.split('').sort
+        result = true
     end
     result
   end

@@ -18,4 +18,8 @@ describe('String#anagram') do
   it('check if two inputs are anagrams, and also if they are palindromes') do
     expect('lepers'.anagram('repel')).to(eq(false))
   end
+
+  # it('check if two inputs are antigrams') do
+  #   expect('hi'.anagram('bye')).to(eq('antigram'))
+  # end
 end
