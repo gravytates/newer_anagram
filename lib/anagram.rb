@@ -3,7 +3,7 @@ class String
     result = 'antigrams'
     input_1 = self.downcase.delete('^a-z').split('').sort
     input_2 = str.downcase.delete('^a-z').split('').sort
-    if self.scan(/^[^aeiouyAEIOUY]+$/) != [] || str.scan(/^[^aeiouyAEIOUY]+$/) != [] || self.scan(/^$/) != [] || str.scan(/^$/) != []
+    if self.scan(/^[^aeiouyAEIOUY]+$|^$|(.)\1{2,}/) != [] || str.scan(/^[^aeiouyAEIOUY]+$|^$|(.)\1{2,}/) != []
       result = 'not a word'
     else
       if self.downcase.delete('^a-z').reverse == str.downcase.delete('^a-z')
@@ -11,8 +11,8 @@ class String
       elsif input_1 == input_2
         result = 'anagrams'
       elsif
-        input_1.each do |aletter|
-          if input_2.any? {|bletter| bletter == aletter }
+        input_1.each do |letter1|
+          if input_2.any? {|letter2| letter2 == letter1 }
             result = 'partial anagrams'
           end
         end
