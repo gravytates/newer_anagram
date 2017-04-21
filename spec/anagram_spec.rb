@@ -58,4 +58,8 @@ describe('String#anagram') do
   it('check if any character is repeated at least 3 times or more to determine if not a word') do
     expect('aaa'.anagram('aaa')).to(eq('not a word'))
   end
+
+  it('check if any character is repeated at least 3 times or more to determine if not a word') do
+    expect('qant'.anagram('qeep up')).to(eq('not a word'))
+  end
 end

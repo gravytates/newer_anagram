@@ -6,7 +6,7 @@
 
 ## Description
 This website can evaluate user inputs to determine whether words are anagrams, palindromes, or antigrams.
-
+Qualifying words are inputs which have at least one vowel, no 'q's that are not followed by a 'u', and possess no repeating characters of at least three.
 
 Website can be viewed in browser at https://gravytates.github.io/newer_anagram
 
