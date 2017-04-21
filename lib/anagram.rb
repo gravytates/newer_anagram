@@ -1,18 +1,18 @@
 class String
   define_method(:anagram) do |str|
     result = 'antigrams'
-    aa = self.downcase.delete('^a-z').split('').sort
-    bb = str.downcase.delete('^a-z').split('').sort
-    if self.scan(/^[^aeiouy]+$/) != [] || str.scan(/^[^aeiouy]+$/) != []
+    input_1 = self.downcase.delete('^a-z').split('').sort
+    input_2 = str.downcase.delete('^a-z').split('').sort
+    if self.scan(/^[^aeiouyAEIOUY]+$/) != [] || str.scan(/^[^aeiouyAEIOUY]+$/) != []
       result = 'not a word'
     else
       if self.downcase.delete('^a-z').reverse == str.downcase.delete('^a-z')
         result = 'palindromes'
-      elsif aa == bb
+      elsif input_1 == input_2
         result = 'anagrams'
       elsif
-        aa.each do |aletter|
-          if bb.any? {|bletter| bletter == aletter }
+        input_1.each do |aletter|
+          if input_2.any? {|bletter| bletter == aletter }
             result = 'partial anagrams'
           end
         end

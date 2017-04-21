@@ -46,4 +46,8 @@ describe('String#anagram') do
   it('check if multiple words can evaluate as anagrams') do
     expect('hey there!'.anagram('hello')).to(eq('partial anagrams'))
   end
+
+  it('check if two inputs are a words despite title case differences') do
+    expect('CASE'.anagram('asec')).to(eq('anagrams'))
+  end
 end
