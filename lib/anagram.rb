@@ -1,8 +1,8 @@
 class String
   define_method(:anagram) do |str|
     result = 'antigrams'
-    aa = self.downcase.split('').sort
-    bb = str.downcase.split('').sort
+    aa = self.downcase.delete(' ').split('').sort
+    bb = str.downcase.delete(' ').split('').sort
     if self.scan(/^[^aeiouy]+$/) != [] || str.scan(/^[^aeiouy]+$/) != []
       result = 'not a word'
     else
