@@ -10,6 +10,9 @@ end
 get('/result') do
   @input_one = params.fetch('input_one')
   @input_two = params.fetch('input_two')
-  @result = @input_one.anagram(@input_two)
+  @similarity = @similarity
+  finals = @input_one.anagram(@input_two)
+  @result = finals[0]
+  @similarity = finals[1]
   erb(:result)
 end
