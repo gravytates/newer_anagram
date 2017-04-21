@@ -50,4 +50,8 @@ describe('String#anagram') do
   it('check if two inputs are a words despite title case differences') do
     expect('CASE'.anagram('asec')).to(eq('anagrams'))
   end
+
+  it('check if two inputs present') do
+    expect(''.anagram('')).to(eq('not a word'))
+  end
 end
