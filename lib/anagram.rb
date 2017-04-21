@@ -3,7 +3,7 @@ class String
     result = 'antigrams'
     input_1 = self.downcase.delete('^a-z').split('')
     input_2 = str.downcase.delete('^a-z').split('')
-    if (self||str).scan(/^[^aeiouyAEIOUY]+$|^$|(.)\1{2,}|q([^u])/) != []
+    if (self).scan(/^[^aeiouy]+$|^$|(.)\1{2,}|q([^u])/i) != [] || (str).scan(/^[^aeiouy]+$|^$|(.)\1{2,}|q([^u])/i) != []
       result = 'not a word'
     else
       if input_1.reverse == input_2
