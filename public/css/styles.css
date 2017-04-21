@@ -1,0 +1,29 @@
+body {
+  font-family: 'Arvo', serif;
+  background-color: grey;
+  color: white;
+}
+
+h1 {
+  color: yellow;
+}
+input {
+  color: black;
+}
+
+.jumbotron {
+  background-color: rgba(255, 255, 255, 0.01);
+}
+
+#background {
+  background-image: url(../img/background.png);
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: fixed;
+  z-index: -1;
+}
