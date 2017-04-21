@@ -3,16 +3,24 @@ class String
     result = false
     aa = self.downcase.split('').sort
     bb = str.downcase.split('').sort
-    if self.downcase.delete('^a-z').reverse == str.downcase.delete('^a-z')
-      result = 'palindrome'
-    elsif aa == bb
-      result = 'anagram'
-    elsif aa.each do |aletter|
+    if self.scan(/^[^aeiouy]+$/) != [] || str.scan(/^[^aeiouy]+$/) != [] #<--only consonants
 # binding.pry
-      if bb.any? {|bletter| bletter == aletter }
-        result = 'partial anagram!'
+      result = 'not a word'
+    else
+
+      if self.downcase.delete('^a-z').reverse == str.downcase.delete('^a-z')
+        result = 'palindrome'
+      elsif aa == bb
+        result = 'anagram'
+      elsif aa.each do |aletter|
+  # binding.pry
+        if bb.any? {|bletter| bletter == aletter }
+          result = 'partial anagram'
+        # elsif bb.all? {|bletter| bletter != aletter}
+        #   result = 'antigram'
+        end
       end
-    end
+      end
     end
     result
   end
