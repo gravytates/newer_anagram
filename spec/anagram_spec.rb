@@ -36,10 +36,14 @@ describe('String#anagram') do
   end
 
   it('check if multiple words can evaluate as anagrams') do
-    expect('how fun'.anagram('wuf hon')).to(eq('anagrams'))
+    expect('how fun!'.anagram('wuf hon')).to(eq('anagrams'))
   end
 
   it('check if multiple words can evaluate as anagrams') do
     expect('hi yo!'.anagram('da bus')).to(eq('antigrams'))
+  end
+
+  it('check if multiple words can evaluate as anagrams') do
+    expect('hey there!'.anagram('hello')).to(eq('partial anagrams'))
   end
 end
