@@ -48,4 +48,13 @@ describe('the anagram path', {:type => :feature}) do
     click_button('Anagrize!')
     expect(page).to have_content('not a word')
   end
+
+  it('processes user entries and evaluates if multiple words are anagrams') do
+    visit('/')
+    fill_in('input_one', :with => 'lepers creepers')
+    fill_in('input_two', :with => 'repels perserec')
+
+    click_button('Anagrize!')
+    expect(page).to have_content('anagrams')
+  end
 end
