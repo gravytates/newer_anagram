@@ -9,6 +9,8 @@ class String
       argument_letters.each_with_index do |bletter, index|
         if bletter.include?(aletter)
           result = true
+        else
+          result = false  
         end
       end
     end
