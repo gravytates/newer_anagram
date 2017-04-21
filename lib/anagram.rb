@@ -23,7 +23,7 @@ class String
           elsif bb.all? {|bletter| bletter != aletter}
           result = 'antigram'
         end
-        end
+        # end
       end
       end
     end

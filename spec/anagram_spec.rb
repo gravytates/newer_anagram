@@ -23,8 +23,12 @@ describe('String#anagram') do
     expect('hello'.anagram('hebbo')).to(eq('partial anagram'))
   end
 
-  it('check if inputs are words') do
+  it('check if input consonants are words') do
     expect('zhk'.anagram('zhk')).to(eq('not a word'))
+  end
+
+  it('check if input non-letter characters are words') do
+    expect('!@#'.anagram('!@#')).to(eq('not a word'))
   end
 
   it('check if two inputs are antigrams') do
